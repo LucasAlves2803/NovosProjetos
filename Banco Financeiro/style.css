@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color:burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Tela principal, aqui o visor com o valor que cada pessoa tem no banco
+e duas tabelas com as operações: Depósito e Contas */
+#tela_principal{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ margin-top: 2.5%;
+ width: 90%;
+ height: 70%;
+ border-radius: 10px;
+ background-color: bisque;
+}
+/* Display com os valores que cada um tem no banco */
+.display{
+ display: grid;
+ width:50%;
+ grid-template: repeat(3,33.3%)/100%;
+ border: 1px solid black;
+}
+/* Div que dentro da div display que é a caixa com o nome e valor que a pessoa tem no
+banco */
+.conta1{
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.valor{
+    display: flex;
+    justify-content: flex-end;
+    font-size: xx-large;
+}
+/* Tela com o extrato, aqui terá um slide */
+#extratos{
+    display: flex;
+    font-family: cursive;
+    width: 90%;
+    height: 25%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: bisque;
+}

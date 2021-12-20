@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* body {
+  height: 100vh;
+  text-align: center;
+  background-color: burlywood;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 5vh;
+  border: 1px solid black;
+  height: 65vw;
+}
+
+.main .np a {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

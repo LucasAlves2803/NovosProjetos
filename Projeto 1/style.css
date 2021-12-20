@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: aqua; */
+}
+
+body{
+    height: 100vh; 
+    /* Com esse comandi o body ocupa 100% da vertical da tela */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.container{
+    display: flex;
+    height: 40%;
+    width: 60%;
+    background-color: cornflowerblue;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+     /* align-content: space-between;  */
+}
+
+#frase4{
+    order: 1;
+    align-self: flex-start;
+}
+
+#frase2{
+    order:3;
+}
+
+#frase1{
+ order: 2;
+ /* align-self: flex-start; */
+}
+
+#frase3{
+    order:4;
+}

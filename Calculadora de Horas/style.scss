@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    body{
+        height: 100vh;
+        text-align: center;
+        background-color: burlywood;
+    }
+}
+
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 5vh;
+    border: 1px solid black;
+    height: 65vw;
+
+    .np{
+        a{
+         color:black;
+        }
+    }
+}
+
