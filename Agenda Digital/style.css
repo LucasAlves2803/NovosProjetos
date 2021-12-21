@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,7 +39,7 @@ body{
     font-size: 1vw;
 }
 
-/* fim do desing do primeiro box */
+/* fim do design do primeiro box */
 .horarios{
     height: 100%;
     width: 90%;
@@ -47,36 +47,44 @@ body{
     overflow-y: scroll;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 3% repeat(7,14%);
+    grid-template: repe/repeat(8,15%);
     align-self: center;
-    gap: 2%;
-    justify-content: start;
-    justify-items: start;
+    /* gap: 2%; */
+    /* justify-content: start; */
+    align-content: flex-start;
     grid-row-start: 5;
     grid-row-end: 10;
 }
-
+.cabecallho{
+    grid-row: span 9;
+}
 .horas{
-    display: flex;
-    height: 100%;
+    /* display: grid; */
+    height: 100vh;
     width: min-content;
-    gap:100px;
-    flex-direction: column;
-    justify-content: space-between;
-    grid-column: span 1;
+    /* grid-template-rows: repeat(24,20%);
+    justify-items: start;
+    align-items: start;
+    grid-column: span 1; */
+    border: 1px solid black;
+}
+
+.hour{
     border: 1px solid black;
 }
 
 .diasdasemana{
    width: 100%;
-   border: 1px solid black;
-   display: grid;
-   
+   /* border: 1px solid black; */
+   /* display: grid;
+   align-content: flex-start;
+   grid-template-rows: repeat(24,20%); */
 }
 
 .espaco{
-    height: 3%;
-    border: 1px solid black;
+    height: 20vh;
+    width: 100%;
+    border: 1px solid black; 
 }
 
 .botoes{
