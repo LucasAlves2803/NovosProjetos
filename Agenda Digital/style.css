@@ -47,17 +47,17 @@ body{
     overflow-y: scroll;
     border-radius: 5px;
     display: grid;
-    grid-template: repe/repeat(8,15%);
+    grid-template-columns: repeat(8,13%);
     align-self: center;
     /* gap: 2%; */
-    /* justify-content: start; */
+    justify-content: start;
     align-content: flex-start;
     grid-row-start: 5;
     grid-row-end: 10;
 }
-.cabecallho{
+/* .cabecallho{
     grid-row: span 9;
-}
+} */
 .horas{
     /* display: grid; */
     height: 100vh;
@@ -82,9 +82,9 @@ body{
 }
 
 .espaco{
-    height: 20vh;
+    height: 10vh;
     width: 100%;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .botoes{
