@@ -40,18 +40,21 @@ body{
 }
 
 /* fim do design do primeiro box */
+
+
 .horarios{
-    height: 100%;
+    height: 95%;
     width: 90%;
-    border: 2px solid black;
     overflow-y: scroll;
-    border-radius: 5px;
     display: grid;
-    grid-template-columns: repeat(8,13%);
+    /* grid-template-columns: repeat(8,12%); */
+    grid-template: repeat(8,10%)/repeat(8,12%);
     align-self: center;
-    /* gap: 2%; */
-    justify-content: start;
-    align-content: flex-start;
+    background-color: lightblue;
+    /* gap: 1%; */
+    /* column-gap: ; */
+    justify-content: center;
+    align-content: center;
     grid-row-start: 5;
     grid-row-end: 10;
 }
@@ -59,14 +62,12 @@ body{
     grid-row: span 9;
 } */
 .horas{
-    /* display: grid; */
-    height: 100vh;
-    width: min-content;
-    /* grid-template-rows: repeat(24,20%);
-    justify-items: start;
-    align-items: start;
-    grid-column: span 1; */
-    border: 1px solid black;
+    background-color: darkblue;
+    color: white;
+}
+
+.week{
+    background-color: azure;
 }
 
 .hour{
@@ -75,15 +76,34 @@ body{
 
 .diasdasemana{
    width: 100%;
-   /* border: 1px solid black; */
-   /* display: grid;
-   align-content: flex-start;
-   grid-template-rows: repeat(24,20%); */
 }
 
 .espaco{
     height: 10vh;
     width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cabecalho{
+    display: grid;
+    height: 10vh;
+    width: 100%;
+    grid-template: repeat(3,33%)/repeat(1,90%);
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.dia{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color:rgb(173, 228, 230);
+    border-radius: 3%;
     border: 1px solid black;
 }
 
