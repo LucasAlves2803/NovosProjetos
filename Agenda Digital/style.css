@@ -12,18 +12,34 @@ body{
     height: 100vh;
 }
 /* Inicio do design do primeiro box */
-.semana{
+.datas{
     height: 100%;
     width: 90%;
-    display: flex;
     background-color: #EDE1F8;
-    flex-direction: row;
-    align-items: center;
+    border-radius: 5px;
     grid-row-start: 1;
     grid-row-end: 5;
-    justify-content: space-around;
     border: 1px solid black;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mes{
+    font-size: 3vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 1.5%;
+    align-self: center;
+}
+.semana{
+    /* height: 100%;
+    width: 90%; */
+    display: flex;
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
 }
 
 .dias{
