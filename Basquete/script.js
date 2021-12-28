@@ -1,12 +1,69 @@
 const bolas = document.querySelectorAll('.imagens');
 var timeazul = document.querySelector('.timeazul');
 var timevermelho = document.querySelector('.timevermelho');
+var crono = document.querySelector('.time');
 var jogo = false;
+var mm,ss;
+var log = false;
+
 function iniciar(){
     jogo = !jogo;
+    cronometro();
 }
 
+function cronometro(){
+    
+    mm= 10;
+    ss = 0;
+    tempo = crono.children[1];
+    console.log(tempo);
+    iniciar_crono();
+}
+
+
+// cronometro do jogo
+
+function pausar(){
+    if (!log){
+        clearInterval(()=> {timer();});
+        log = !log;
+    }
+    else{
+        iniciar_crono();
+        log = !log;
+    }
+}
+
+function parar(){
+    clearInterval(() => {timer();},1000);
+    mm= 0;
+    ss = 0;
+}
+function iniciar_crono(){
+    setInterval(()=> {timer();},1000);
+}
+
+function timer(){
+       
+    if (ss === 0){
+        ss = 59;
+        mm--;
+    }
+    ss--;
+    if (mm == 0){
+        ss= 0;
+        parar();
+    }
+    let format = mm + ':' + (ss < 10 ? '0' + ss: ss);
+    tempo.innerHTML = format;
+}
+
+
+
+
+
 function rotate(){
+// controla o placar do jogo
     if (jogo){
         this.classList.toggle('rotate');
     var elem = this;
