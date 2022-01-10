@@ -5,6 +5,7 @@ var crono = document.querySelector('.time');
 var jogo = false;
 var mm,ss;
 var log = false;
+var intervalo;
 
 function iniciar(){
     jogo = !jogo;
@@ -12,11 +13,11 @@ function iniciar(){
 }
 
 function cronometro(){
-    
-    mm= 10;
-    ss = 0;
     tempo = crono.children[1];
-    console.log(tempo);
+    temp = tempo.innerHTML.split(':');
+    mm = temp[0];
+    ss = temp[1];
+    console.log(`minutos = ${mm} e segundos = ${ss}`);
     iniciar_crono();
 }
 
@@ -25,7 +26,7 @@ function cronometro(){
 
 function pausar(){
     if (!log){
-        clearInterval(()=> {timer();});
+        clearInterval(intervalo);
         log = !log;
     }
     else{
@@ -35,18 +36,17 @@ function pausar(){
 }
 
 function parar(){
-    clearInterval(() => {timer();},1000);
-    mm= 0;
-    ss = 0;
+    clearInterval(intervalo);
+    crono.children[1].innerHTML = '10:00';
 }
 function iniciar_crono(){
-    setInterval(()=> {timer();},1000);
+    intervalo = setInterval(()=> {timer();},1000);
 }
 
 function timer(){
-       
-    if (ss === 0){
-        ss = 59;
+    console.log("valor de ss =" + ss);   
+    if (ss == 00){
+        ss = 60;
         mm--;
     }
     ss--;

@@ -13,8 +13,7 @@
     align-items: center;
 }
 
-.entrada{
-}
+
 
 .minicontainer{    
     display: flex;
@@ -39,6 +38,13 @@
     overflow-y: scroll;
 
     /* align-items: center;   */
+}
+
+.opcoes{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    width: 40vw;
 }
 
 .barrinhas{
