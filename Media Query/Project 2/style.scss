@@ -1,0 +1,176 @@
+*{
+    padding: 0 5px;
+    margin: 0;
+    box-sizing: border-box;
+    body{
+        font-family: sans-serif;
+    }
+}
+
+
+#size{
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translateX(-50%);
+    color: red;
+}
+
+.container{
+    height: 100vh;
+}
+
+.header{
+ height: 10%;   
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ &__logo{
+    font-size: 4vw;
+ }
+ &__menu{
+     display: flex;
+     gap: 15px;
+     font-size: 2.5vw;
+ }
+}
+
+.main{
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    &__image{ 
+        // To Study the background properties
+        background-image: url('/images/Portrait.png');
+        background-size: contain;
+        background-repeat: no-repeat; // i use no-repart for not repeat the image many times
+        background-position: left center; // the first value works on main axis the second value works on the cross axis 
+        width: 50%;
+        height: 100%;
+    }
+    &__text{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-1{
+            font-size: 10vw;
+        }
+        &-2,&-3,&-4{
+            font-size: 5vw;
+        }
+    } 
+}
+
+.footer{
+    height: 10%;
+    display: grid;
+    grid-template: auto/ repeat(4,10%);
+    // justify-content: center;
+    // align-items: center;
+    justify-items: end;
+    align-items: center;
+    justify-content: end;
+    margin-right: 8%;
+    &__instagram{
+        img{
+            width: 5.3vw;
+        }
+    }
+    &__twitter{
+        img{
+            width: 5.3vw;
+        } 
+    }
+    &__dribbble{
+        img{
+            width: 5.3vw;
+        }
+    }
+    &__behance{
+        img{
+            width: 5.3vw;
+        }
+    }
+}
+
+
+@media screen and (max-width: 650px){
+  .header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    &__logo{
+        font-size: 10vw;
+     }
+    &__menu{
+        display: none;
+    }
+  }
+
+  .main{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__image{ 
+        // To Study the background properties
+        background-image: url('/images/Portrait.png');
+        background-size: contain;
+        background-repeat: no-repeat; // i use no-repart for not repeat the image many times
+        background-position: center; // the first value works on main axis the second value works on the cross axis 
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-size: 100%;
+    }
+    &__text{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        border: 1px solid black;
+        &-1{
+            display:none;
+        }
+        &-2,&-3,&-4{
+            font-size: 30px;
+        }
+    } 
+   }
+   .footer{
+    height: 10%;
+    // width: 50%;
+    display: flex;
+    justify-content: center;
+    // border: 1px solid black;
+    margin: 0;
+    gap: 25px;
+    align-items: center;
+    &__instagram{
+        img{
+            width: 8vw;
+        }
+    }
+    &__twitter{
+        img{
+            width: 8vw;
+        } 
+    }
+    &__dribbble{
+        img{
+            width: 8vw;
+        }
+    }
+    &__behance{
+        img{
+            width: 8vw;
+        }
+    }
+}
+}

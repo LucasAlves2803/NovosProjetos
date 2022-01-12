@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador de Frações</title>
+    <link rel='stylesheet' href="style.css">
+</head>
+<body>
+    <div class="lucas">
+        <h1>Programado por Lucas</h1>
+    </div>
+    <div id="container">
+        <div id="tela">
+            <!-- A classe tela é onde as frações são exibidas
+            dentro dela temos cinco elementos a primeira fração
+            o operador, a segunda fração, o sinal de igual
+            e a fração que é o resultado da operação -->
+            <div id="fr1"> 
+                <!-- Fração 1 - Toda fração tem numerador e denominador
+                Por isso, criei estas classes
+                A classe traco é o traço que separa numerador do denominador-->
+                <div class="numerador" id="fr1num">1</div>
+                <div class="traco"></div>
+                <div class="denominador" id="fr1den">2</div>    
+            </div>
+            <div id="operador">
+                +
+            </div>
+            <div id="fr2"> 
+                <div class="numerador" id="fr2num">1</div>
+                <div class="traco"></div>
+                <div class="denominador" id="fr2den">3</div>
+            </div>
+            <div id="igual">
+                    =
+            </div>
+         
+            <div id="fr3"> 
+                <div class="numerador" id='fr3num'>4</div>
+                <div class="traco"></div>
+                <div class="denominador" id='fr3den'>5</div>
+            </div>
+        </div>
+        <div id="botao">
+            <div id="operandos">
+                <div class="num" id="um" onclick="fra(1)">1</div>
+                <div class="num" id="dois" onclick="fra(2)">2</div>
+                <div class="num" id="tres" onclick="fra(3)">3</div>
+                <div class="num" id="quatro" onclick="fra(4)">4</div>
+                <div class="num" id="cinco" onclick="fra(5)">5</div>
+                <div class="num" id="seis" onclick="fra(6)">6</div>
+                <div class="num" id="sete" onclick="fra(7)">7</div>
+                <div class="num" id="oito" onclick="fra(8)">8</div>
+                <div class="num" id="nove" onclick="fra(9)">9</div>
+                <div class="num" id="zero" onclick="fra(0)">0</div>
+                <div class="num" id="barra" onclick="funcoes('/')">/</div>
+            </div>
+            <div id="operadores">
+                <div class="oper" id="soma" onclick="fra('+')">+</div>
+                <div class="oper" id="subtracao" onclick="fra('-')">-</div>
+                <div class="oper" id="multiplicacao" onclick="fra('x')"> x</div>
+                <div class="oper" id="divisao" onclick="fra('/')">/</div>
+                <div class="oper" id="resultado" onclick='calc()'> = </div>
+            </div>
+        </div>   
+    </div>
+    <div id="iniciar">
+        <button onclick="iniciou()"> Iniciar </button>
+        <button onclick='apaga()'> Apagar Tudo</button>
+        <button onclick='apaga_digitos()'> Apagar</button>
+    </div>
+    
+<script src="script.js"></script>    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Navigation Menu</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            
+            <!-- Logo here -->
+            <div class="header__logo">
+                Logo
+            </div>
+            
+            <!-- Button Managemnet -->
+            <div class="header__btn">
+                
+                <i id='open' class='header__btn-open bx bx-menu'></i>
+
+                <i id='close' class='header__btn-close bx bx-x hide'></i>
+            </div>
+            
+            <!-- Menu Items here -->
+            <div id='menu' class="header__menu slide">
+                <div class="header__menu-1">
+                    <input type="radio" name="A" id='a'>
+                    <label for="a">Home</label>
+                </div>
+                <div class="header__menu-2"> 
+                    <input type="radio" name="A" id='b'>
+                    <label for="b">About</label>
+                </div>
+                <div class="header__menu-3">
+                    <input type="radio" name="A" id='c'>
+                    <label for="c">Services</label>
+                </div>
+                <div class="header__menu-4">
+                    <input type="radio" name="A" id='d'>
+                    <label for="d">Contacts</label>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main__text-1">Welcome</div>
+            <div class="main__text-2">Lorem ipsum dolor sit amet.</div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

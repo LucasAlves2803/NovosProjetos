@@ -1,0 +1,68 @@
+$color-1: #cdb4db;
+$color-2: #fff1e6;
+$color-3: #52b788;
+$color-4: #bee1e6;
+
+$mobile : 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    body{
+        font-family: sans-serif;
+        font-size: 35px;
+    }
+}
+
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+#size{
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translateX(-50%);
+    color: red;
+}
+
+// @media screen and (min-width: 500px) { // when the pixel are above than 500 px the container's color be $color-1
+//     .container{
+//         background-color: $color-1;
+//     }
+// }
+
+@media screen and (max-width: $desktop){
+    .container{
+        background-color: $color-1;
+    }   
+}
+
+@media screen and (max-width: $laptop){
+    .container{
+        background-color: $color-2;
+    }       
+}
+
+@media screen and (max-width: $tablet){
+    .container{
+        background-color: $color-3;
+    }   
+}
+
+@media screen and (max-width: $mobile){
+    .container{
+        background-color: $color-4;
+    }   
+}
