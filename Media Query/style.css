@@ -25,6 +25,23 @@
   background-color: #fff;
 }
 
+.box {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100vh;
+  -ms-grid-columns: 50vw 50vw;
+      grid-template: 100vh/ 50vw 50vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #52b788;
+}
+
 #size {
   position: absolute;
   top: 60%;

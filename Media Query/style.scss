@@ -29,6 +29,16 @@ $desktop: 1200px;
     background-color: #fff;
 }
 
+.box{
+    height:100vh;
+    display: grid;
+    grid-template: 100vh/ 50vw 50vw ;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: #52b788;
+}
+
 #size{
     position: absolute;
     top:60%;

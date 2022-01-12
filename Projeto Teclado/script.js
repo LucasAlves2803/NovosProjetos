@@ -203,7 +203,7 @@ function notas_teclas_brancas(){
 		key = ['do', 're', 'mi', 'fa', 'sol', 'la' ,'si']
 		console.log(teclas.length);
 		for(let j =0; j < teclas.length; j++){
-			teclaz = teclas[j];
+		teclaz = teclas[j];
 			for(let i=0; i < teclaz.children.length; i++){
 				 // += PARA ADICIONAR O TEXTO SEM APAGAR O CONTEÚDO QUE JÁ EXISTE
 				if (teclaz.children[i].id.slice(0,2) === 're' || teclaz.children[i].id.slice(0,2) === 'so' || teclaz.children[i].id.slice(0,2) === 'la'){
@@ -311,6 +311,14 @@ function apaga_letras(){
 		}
 	}
 }
+function apaga_letra_preta(){
+	teclas_pt = document.querySelectorAll("#tecla_preta");
+	keyS = ['do#','re#','fa#','sol#','la#'];
+	for (let i=0; i < teclas_pt.length; i++){
+	    teclas_pt[i].innerHTML = "";
+	}
+	
+}
 
 function letras(){
 	if (letras_on){
@@ -323,6 +331,7 @@ function letras(){
 	}
 	else{
 	  apaga_letras();
+	  apaga_letra_preta();
       btn = document.querySelector("#letras");
 	  btn.style.backgroundColor = 'white';
 	  btn.style.color = 'black';	  
