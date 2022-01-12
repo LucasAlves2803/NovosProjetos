@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Jogador Caro </title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1 id='headline'> Teclado Online </h1>
+		
+		
+		<div id="button"> 
+			<button class='btn' id="letras" type="button" onclick="letras()"> Letras </button>
+			<button class='btn' id="notas" type="button" onclick="notas()"> Notas </button>
+			<button class='btn' id='sustain' type='button' onclick="sustain()"> Sustain </button>
+		</div>
+		
+		
+	  	
+	  <div id='bod'> 
+		<div id="principal">
+			<div id="teclado"> 
+				<div id='do' onclick="tecla('do')">
+					<div id='pt2'> 
+						<div id="tecla_preta" class='doS' onclick="tecla('do#')"> 
+					</div>
+					    
+					</div>
+					
+					<div class="linha2"> </div>
+					 
+				</div>
+
+				<div id='re' onclick="tecla('re')">
+						
+						<div class='linha1'> 
+							<div id='pt1'> 
+								<div class='doS' onclick="tecla('do#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='reS' onclick="tecla('re#')"> 
+								</div>
+							</div> 
+						</div>
+					<div class="linha2"> </div>
+				</div>						
+				<div id='mi' onclick="tecla('mi')"> 
+					<div id="pt1"> 
+						<div class='reS' onclick="tecla('re#')"> 
+						</div> 
+					</div>
+					<div class="linha2"> </div>
+					
+				</div>
+				<div id='fa' onclick="tecla('fa')">
+						<div id="pt2"> 
+						      <div id="tecla_preta" class='faS' onclick="tecla('fa#')"> 
+							  </div> 
+						</div>
+						<div class="linha2"> </div>
+				</div>
+				<div id='sol' onclick="tecla('sol')">
+						<div class='linha1'> 
+							<div id='pt1'> 
+								<div class='faS' onclick="tecla('fa#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='solS' onclick="tecla('sol#')"> 
+								</div>
+							</div> 
+						</div>
+						
+						<div class="linha2"> </div>
+						
+				</div>
+				<div id='la' onclick="tecla('la')">
+						
+						<div class='linha1'>
+							<div id='pt1'> 
+								<div class='solS' onclick="tecla('sol#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='laS' onclick="tecla('la#')"> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="linha2"> </div>
+						
+				</div>
+				<div id='si' onclick="tecla('si')">
+						<div id='pt1'> 
+							<div class='laS' onclick="tecla('la#')"> 
+							</div> 
+						</div>
+						<div class="linha2"> </div>
+				</div>
+			</div>
+			<div id="teclado"> 
+				<div id='do2' onclick="tecla('do2')">
+					<div id='pt2'> 
+						<div id="tecla_preta" class='do2S' onclick="tecla('do2#')"> 
+						</div>
+					</div>
+					<div class="linha2"> </div> 
+				</div>
+				<div id='re2' onclick="tecla('re2')">
+						
+						<div class="linha1">
+							<div id='pt1'> 
+								<div class='do2S' onclick="tecla('do2#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='re2S' onclick="tecla('re2#')"> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="linha2"> </div>
+						
+				</div>						
+				<div id='mi2' onclick="tecla('mi2')">
+					<div id="pt1">
+						<div  class='re2S' onclick="tecla('re2#')"> 
+						</div>
+					</div>
+					<div class="linha2"> </div>	
+				</div>
+				<div id='fa2' onclick="tecla('fa2')">
+						<div id='pt2'>
+							<div id="tecla_preta" class='fa2S' onclick="tecla('fa2#')"> 
+							</div>
+						</div>
+						<div class="linha2"> </div>
+				</div>
+				<div id='sol2' onclick="tecla('sol2')">
+						
+						<div class="linha1">
+							<div id='pt1'> 
+								<div class='fa2S' onclick="tecla('fa2#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='sol2S' onclick="tecla('sol2#')"> 
+								</div>
+							</div>
+						</div>
+						<div class="linha2"> </div>
+				</div>
+				<div id='la2' onclick="tecla('la2')">
+						
+						<div class="linha1">
+							<div id='pt1'> 
+								<div class='sol2S' onclick="tecla('sol2#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='la2S' onclick="tecla('la2#')"> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="linha2"> </div>
+				</div>
+				<div id='si2' onclick="tecla('si2')">  
+						<div id='pt1'> 
+							<div class='la2S' onclick="tecla('la2#')"> 
+							</div>
+						</div> 	
+						<div class="linha2"> </div>
+				</div>
+			</div>
+			<div id="teclado"> 
+				<div id='do3' onclick="tecla('do3')">
+					<div id="pt2">
+						<div id="tecla_preta" class='do3S' onclick="tecla('do3#')"> 
+						</div>
+					</div>
+					<div class="linha2"> </div>
+				</div>
+				<div id='re3' onclick="tecla('re3')">
+						
+						<div class="linha1"> 			
+							<div id='pt1'> 
+								<div  class='do3S' onclick="tecla('do3#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='re3S' onclick="tecla('re3#')"> 
+								</div>
+							</div> 
+						</div>
+						
+						<div class="linha2"> </div>
+			
+						
+				</div>						
+				<div id='mi3' onclick="tecla('mi3')"> 
+					<div id="pt1"> 
+						<div class='re3S' onclick="tecla('re3#')"> 
+						</div>
+					</div>
+					
+					<div class="linha2"> </div>
+				</div>
+				<div id='fa3' onclick="tecla('fa3')">
+						
+						<div id="pt2"> 
+							<div id="tecla_preta" class='fa3S' onclick="tecla('fa3#')"> 
+						    </div>
+						</div>
+						<div class="linha2"> </div>		
+				</div>
+				<div id='sol3' onclick="tecla('sol3')">
+						<div class="linha1">
+							<div id='pt1'> 
+								<div class='fa3S' onclick="tecla('fa3#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='sol3S' onclick="tecla('sol3#')"> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="linha2"> </div>
+				</div>
+				<div id='la3' onclick="tecla('la3')">
+						<div class="linha1">
+							<div id='pt1'> 
+								<div class='sol3S' onclick="tecla('sol3#')"> </div>
+							</div>
+						
+							<div id='pt2'>
+								<div id="tecla_preta" class='la3S' onclick="tecla('la3#')"> 
+								</div>
+							</div>
+						</div>
+						
+						<div class="linha2"> </div>
+				</div>
+				<div id='si3' onclick="tecla('si3')">
+						<div id="pt1">
+							<div class='la3S' onclick="tecla('la3#')"> 
+							</div> 	
+						</div>
+						<div class="linha2"> </div>
+				</div>
+			</div>
+	   </div>
+	  </div> 
+	<script charset="ISO-8859-1" src="script.js"> </script>    
+	</body>
+</html>
