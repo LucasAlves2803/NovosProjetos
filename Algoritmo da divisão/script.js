@@ -72,7 +72,7 @@ function divisao(){
 }
 
 function atualiza_info(){
-    for 
+ 
 }
 
 function trocar_design(design){;
@@ -80,22 +80,48 @@ function trocar_design(design){;
     design.children[2].innerHTML = 'espaço em obra';
     design.removeChild(design.children[1]); // remove um filho do nó child
     design.removeChild(design.children[1]);
-    var grid,screen;
-    grid = '<div class="grid_principal"> </div>';
-    screen= '<div class="resultado_final"> <div>';
-    design.innerHTML += grid + screen;
+    var grid_principal,resultado_final;
+    grid_principal = '<div class="grid_principal"> </div>';
+    resultado_final = '<div class="resultado_final"> <div>';
+    design.innerHTML += grid_principal + resultado_final;
     console.log(design);
-    grid = design.children[1];
-    // grid.style.backgroundColor = 'red'; altera a cor 
-    // da linha
-    for (var i=0;  i < 8; i++){
-        nomeia(grid, nomes[i]);        
-    }
+    var grid = design.children[1];
+    // grid.style.backgroundColor = 'red';
+   
+        for (var i=0;  i < 8; i++){
+                cabecalho(grid, nomes[i]);        
+        }
+        for(var j=0;j<4; j++){
+            for (var i=0;  i < 8; i++){
+                if (i ==0){
+                    var nome_da_classe = 'Dividendo';
+                    
+                }
+                else if (i==1){
+                    var nome_da_classe = 'divisor';
+                }
+                classe(grid, nome_da_classe,j);        
+            }
+        }
+        
+    
+    
+    botoes(design.children[2]);
     atualiza_info();
 }
 
-function nomeia(grid,nome){
-    grid.innerHTML+= `<div class='celula'> ${nome}</div>`;
+function botoes(botoes_finais){
+    botoes_finais.innerHTML = '<button class="botao" onclick="avancar()">Próximo</button>';
+    botoes_finais.innerHTML+= '<button class="botao" onclick="voltar()">Voltar</button>';
+    botoes_finais.innerHTML+= '<button class="botao" onclick="voltar()">Fim</button>';
+}
+
+function cabecalho(grid,nome){
+    grid.innerHTML+= `<div class='celula'>${nome}</div>`;
+}
+
+function classe(grid,nome_da_classe,linha){
+    grid.innerHTML+= `<div class='celula ${nome_da_classe + ' ' +linha}'></div>`;
 }
 
 function iniciar_valores(){
