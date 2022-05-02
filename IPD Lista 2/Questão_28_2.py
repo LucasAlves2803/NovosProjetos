@@ -12,13 +12,73 @@ def entrada():
 def subsequencia(lista):
     n = len(lista)
     novalista = []
-    for j in range(n-2,0,-1):
-        novalista.append([])
-        for i in range(0,n):
-            if i != j:
-                novalista[n-2-j].append(lista[i])
-    return novalista
+    vetor = []
+    for i in range(len(lista)):
+        if i == n-1:
+            vetor.append(0)
+        else:
+            vetor.append(1)
+    if (n>2):
+        for i in range(len(lista)):
+            novalista.append([])
+            for j in range(len(lista)):
+                if vetor[j]==1:
+                    novalista[i].append(lista[j])
+                else:
+                    if (j >= 1):
+                        vetor[j-1] = 0
+                        vetor[j] = 1
+                    
+                    
+                
+##        for j in range(n-1,0,-1):
+##            novalista.append([])
+##            for i in range(0,n):
+##                if (j != i):
+##                    novalista[n-1-j].append(lista[i])
+        for i in novalista:
+            log = True
+            for j in range(len(i)-1):
+                if i[j]+1 != i[j+1]:
+                    log = False
+                    break
+            if log:
+                novalista.remove(i)
+    
+    
+        return novalista
+    else:
+        return []
 
-lista = entrada()
-novalista = subsequencia(lista)
-print(novalista)
+
+def subconjunto(lista):
+    n = len(lista)
+    for i in range(n):
+        if lista[i] not in newlista:
+            newlista.append(lista[i])
+            x = subsequencia(lista[i])
+            if x != []:
+                subconjunto(x)
+
+
+def ordem():
+    lista = []
+    for i in range(len(newlista)):
+        lista.append(0)
+    for i in range(len(newlista)-1):
+        v = len(newlista[i])
+        ind = i
+        for j in range(i+1,len(newlista)):
+            if len(newlista[j]) < v:
+                v = len(newlista[j])
+                ind = j
+        lista[i] = newlista[ind]
+        lista[ind] = newlista[i]
+    return lista
+        
+newlista = []
+lista = [1,2,3,4,5,6]
+lista = subsequencia(lista)
+subconjunto(lista)
+print(newlista)
+
