@@ -1,84 +1,83 @@
-arquivo = open('texto.txt', 'r')
+arq = open('texto.txt', 'r')
 
-texto = arquivo.read()
-novo_texto = []
+texto = arq.read()
+texto_novo = []
 texto = texto.split(' ')
-for palavras in texto:
-    palavras = ''.join([i for i in palavras if not i.isdigit()])
-    if palavras.find('!?') != -1:
-        if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+for termos in texto:
+    termos = ''.join([i for i in termos if not i.isdigit()])
+    if termos.find('!?') != -1:
+        if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != '!?'):
-                    novo_texto.append(i.replace('!?',''))
+                    texto_novo.append(i.replace('!?',''))
         else:
-            if (palavras != '!?'):
-                novo_texto.append(palavras.replace('!?',''))
-    elif palavras.find('.') != -1:
-         print(palavras)
-         if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+            if (termos != '!?'):
+                texto_novo.append(termos.replace('!?',''))
+    elif termos.find('.') != -1:
+         if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != '.'):
-                    novo_texto.append(i.replace('.',''))
+                    texto_novo.append(i.replace('.',''))
          else:
-             if (palavras != '.'):
-                novo_texto.append(palavras.replace('.',''))
-    elif palavras.find('!') != -1:
-          if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+             if (termos != '.'):
+                texto_novo.append(termos.replace('.',''))
+    elif termos.find('!') != -1:
+          if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != '!'):
-                    novo_texto.append(i.replace('!',''))
+                    texto_novo.append(i.replace('!',''))
           else:
-              if (palavras != '!'):
-                novo_texto.append(palavras.replace('!',''))
-    elif palavras.find(',') != -1:
-        if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+              if (termos != '!'):
+                texto_novo.append(termos.replace('!',''))
+    elif termos.find(',') != -1:
+        if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != ','):
-                    novo_texto.append(i.replace(',',''))
+                    texto_novo.append(i.replace(',',''))
         else:
-            if (palavras != ','):
-                novo_texto.append(palavras.replace(',',''))
-    elif palavras.find('-') != -1:
-        if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+            if (termos != ','):
+                texto_novo.append(termos.replace(',',''))
+    elif termos.find('-') != -1:
+        if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != '-'):
-                    novo_texto.append(i.replace('-',''))
+                    texto_novo.append(i.replace('-',''))
         else:
-            if (palavras != '-'):
-                novo_texto.append(palavras.replace('-',''))
-    elif palavras.find('?') != -1:
-        if (palavras.find('\n')):
-            palavras = palavras.split('\n')
-            for i in palavras:
+            if (termos != '-'):
+                texto_novo.append(termos.replace('-',''))
+    elif termos.find('?') != -1:
+        if (termos.find('\n')):
+            termos = termos.split('\n')
+            for i in termos:
                 if (i != '?'):
-                    novo_texto.append(i.replace('?',''))
+                    texto_novo.append(i.replace('?',''))
         else:
-            if (palavras != '?'):
-                novo_texto.append(palavras.replace('?',''))
+            if (termos != '?'):
+                texto_novo.append(termos.replace('?',''))
     else:
-        if (palavras != ''):
-            if (palavras.find('\n')):
-                palavras = palavras.split('\n')
-                for i in palavras:
-                    novo_texto.append(i)
+        if (termos != ''):
+            if (termos.find('\n')):
+                termos = termos.split('\n')
+                for i in termos:
+                    texto_novo.append(i)
             else:
-                 novo_texto.append(palavras)
+                 texto_novo.append(termos)
 
 
 ocorrencia = {}
-for i,valor in enumerate(novo_texto):
+for i,valor in enumerate(texto_novo):
     if valor not in ocorrencia:
         ocorrencia[valor] = 0
-        for j in novo_texto:
+        for j in texto_novo:
             if valor == j:
                 ocorrencia[valor]+=1
 
-arquivo.close()
+arq.close()
 print(ocorrencia)
 
     

@@ -1,18 +1,18 @@
 def condensa_numeros(lista):
     lista_condensada = []
-    cont = int()
-    num = lista[0]
+    contador = int()
+    numero = lista[0]
     for i in lista:
-        if num == i:
-            cont+=1
+        if numero == i:
+            contador+=1
         else:    
-            if (cont > 1):
-                lista_condensada.append('{:d}^{:d}'.format(num,cont))
+            if (contador > 1):
+                lista_condensada.append('{:d}^{:d}'.format(numero,contador))
             else:
-                lista_condensada.append('{:d}'.format(num))
-            cont=1
-            num =i
-    lista_condensada.append('{:d}'.format(num))
+                lista_condensada.append('{:d}'.format(numero))
+            contador=1
+            numero =i
+    lista_condensada.append('{:d}'.format(numero))
     return lista_condensada
 
 

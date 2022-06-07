@@ -12,6 +12,7 @@ var objdiv ={
 }
 
 var nomes = ['D','d', 'D >= d', 'q','d*q', 'D- (d*q)','r', 'D=r'];
+var classe_das_colunas = []
 
 function casas_decimais(d){
     let cont = 0;
@@ -68,17 +69,29 @@ function divisao(){
          console.log(`então, a divisão continua e o novo dividendo é  ${objdiv.Dividendo}`);
     }
     
-    main();
+    // main();
 }
 
-function atualiza_info(){
- 
+function exibe(design, cont){
+    if (cont <=1 ){
+        
+    }else{
+
+    }
 }
+
+// function atualiza_info(opcao){
+//   if (op <= 1){
+
+//   }
+// }
 
 function trocar_design(design){;
-    design.children[1].innerHTML = 'espaço em obra';
-    design.children[2].innerHTML = 'espaço em obra';
+    // design.children[1].innerHTML = 'espaço em obra';
+    // design.children[2].innerHTML = 'espaço em obra';
     design.removeChild(design.children[1]); // remove um filho do nó child
+    // apaga o título divisão inteira
+    // apaga os imputs  
     design.removeChild(design.children[1]);
     var grid_principal,resultado_final;
     grid_principal = '<div class="grid_principal"> </div>';
@@ -86,28 +99,19 @@ function trocar_design(design){;
     design.innerHTML += grid_principal + resultado_final;
     console.log(design);
     var grid = design.children[1];
-    // grid.style.backgroundColor = 'red';
-   
-        for (var i=0;  i < 8; i++){
-                cabecalho(grid, nomes[i]);        
-        }
-        for(var j=0;j<4; j++){
-            for (var i=0;  i < 8; i++){
-                if (i ==0){
-                    var nome_da_classe = 'Dividendo';
-                    
+    // for (let i=0;  i < 8; i++){
+    //         cabecalho(grid, nomes[i]);        
+    // }
+    for(let j=0;j<8; j++){
+        for (let i=0;  i < 8; i++){
+            if (j == 0){
+                cabecalho(grid, nomes[i]);  
+            }else{
+                    classe(grid,j,i);
                 }
-                else if (i==1){
-                    var nome_da_classe = 'divisor';
-                }
-                classe(grid, nome_da_classe,j);        
             }
-        }
-        
-    
-    
+    }                
     botoes(design.children[2]);
-    atualiza_info();
 }
 
 function botoes(botoes_finais){
@@ -117,25 +121,26 @@ function botoes(botoes_finais){
 }
 
 function cabecalho(grid,nome){
-    grid.innerHTML+= `<div class='celula'>${nome}</div>`;
+    grid.innerHTML+= `<div  class="celula">${nome}</div>`;
 }
 
-function classe(grid,nome_da_classe,linha){
-    grid.innerHTML+= `<div class='celula ${nome_da_classe + ' ' +linha}'></div>`;
+function classe(grid,linha,coluna){   
+    let nome = 'celula Valor' + "" + linha + "" + coluna; 
+    grid.innerHTML+= `<div class='${nome}' ></div>`
 }
 
 function iniciar_valores(){
     objdiv.Dividendo = document.querySelector("#dividendo").value;
     objdiv.Divisor = document.querySelector("#divisor").value;
-    var design = document.querySelector('.main');
-    console.log(design.className);
-    design.className = 'main2';
-    trocar_design(design);
+    
     // apaga o design inicial
-
-    if (objdiv.Dividendo != 0 && objdiv.Divisor != 0 ){
+    if (objdiv.Dividendo >= 0 && objdiv.Divisor >= 0 ){
         objdiv.Dividendo_inicial = objdiv.Dividendo;
-        main();
+        let design = document.querySelector('.main');
+        design.className = 'main2';
+        trocar_design(design);
+        main(design);
+        exibe(cont,design);
     }
 }
 
@@ -143,11 +148,14 @@ function iniciar_valores(){
 
 
 
-function main(){
+function main(design){
     if (objdiv.Dividendo >= objdiv.Divisor){
+        if (cont == 0){
+            divisao();
+        }        
+        exibe(design,cont);
         cont = (cont+1) % 7;
-        divisao();
-        // exibe();
+        
     }else if (objdiv.fim){
         console.log(`${objdiv.Dividendo_inicial} / ${objdiv.Divisor} = ${objdiv.soma_q}`)
     }else{

@@ -57,19 +57,19 @@ h1{
 /* design da segunda tela */
 .main2{
     display: grid;
-    height: 50vh;
+    height: 70vh;
     width:85vw;
     background-color:  rgba(186, 198, 236, 0.692);
     border: 1px solid black;
-    grid-template: 20% 60% 20%/ 100%;
+    grid-template: 5% 90% 5%/ 100%;
     justify-items: center;
-    align-items: start;
+    align-items: center;
 }
 .grid_principal{
     display: grid;
     background-color: white;
     /* border: 1px solid black; */
-    grid-template: repeat(4,20%)/repeat(8,12.5%);
+    grid-template: repeat(8,12.5%)/repeat(8,12.5%);
     justify-items: end;
     justify-content: center;
 }

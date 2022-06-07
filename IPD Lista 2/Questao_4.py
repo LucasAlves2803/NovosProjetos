@@ -1,11 +1,11 @@
-vetor_de_inteiros = []
-n = 10
-cont = int()
+vet = []
+n = 30
+contador = int()
 for i in range(n):
-    vetor_de_inteiros.append(int(input('Digite um inteiro: ')))
-x = int(input('Digite un número: '))
+    vet.append(int(input('Digite um inteiro: ')))
+x = int(input('Digite um número: '))
 
-for i in vetor_de_inteiros:
+for i in vet:
     if x == i:
-        cont += 1
-print("O número {:d} aparece {:d} vezes no vetor".format(x, cont))
+        contador += 1
+print("O número {:d} aparece {:d} vezes no vetor".format(x, contador))

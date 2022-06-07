@@ -1,5 +1,5 @@
 arquivo = open('entrada.txt', 'r')
-novo_arquivo = open('saida1.txt','w')
+novo_arquivo = open('saida.txt','w')
 novo_texto = ''
 ocorrencia = {}
 for i in arquivo.read():

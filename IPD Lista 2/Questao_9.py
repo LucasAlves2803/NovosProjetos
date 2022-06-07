@@ -6,17 +6,17 @@ matriz = []
 for i in range(n):
     matriz.append([])
     for j in range(m):
-        num = int(input("Digite um numero"))
-        matriz[i].append(num)
+        numero = int(input("Digite um numero"))
+        matriz[i].append(numero)
 
 
 
 def mat_maior_10(matriz):
-    cont = int()
+    contador = int()
     for i in matriz:
         for j in i:
             if ( j > 10):
-                cont+=1
-    return cont
+                contador+=1
+    return contador
 
 print('{:d}'.format(mat_maior_10(matriz)))

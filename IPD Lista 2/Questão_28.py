@@ -1,7 +1,7 @@
 def entrada():
     lista = []
     while True:
-        a = str(input('Digite um elemento'))
+        a = str(input('Digite um elemento:'))
         if (a != 'F' and a != 'f'):
             lista.append(int(a))
         else:
@@ -29,13 +29,6 @@ def subsequencia(lista):
                         vetor[j-1] = 0
                         vetor[j] = 1
                     
-                    
-                
-##        for j in range(n-1,0,-1):
-##            novalista.append([])
-##            for i in range(0,n):
-##                if (j != i):
-##                    novalista[n-1-j].append(lista[i])
         for i in novalista:
             log = True
             for j in range(len(i)-1):
@@ -77,7 +70,7 @@ def ordem():
     return lista
         
 newlista = []
-lista = [1,2,3,4,5,6]
+lista = entrada()
 lista = subsequencia(lista)
 subconjunto(lista)
 print(newlista)

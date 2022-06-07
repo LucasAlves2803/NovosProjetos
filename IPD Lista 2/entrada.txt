@@ -1,1 +1,1 @@
-O começo é o inicio da primeira parte do princípio da ordem inicial do passado, que acontece antes do futuro e, ao mesmo tempo, depois, é o passado do passado e passado do futuro. O meio é a metade da média da mediana que resulta no presente, que nunca acontece e sempre acontece, sempre é presente e nunca é presente ao mesmo tempo.  
+Uma palavra A é um anagrama de outra palavra B se podemos transformar a palavra A na palavra B apenas trocando de posição as letras da palavra A. Por exemplo, "iracema" é um anagrama de "america", e "estudo" é um anagrama de "duetos"

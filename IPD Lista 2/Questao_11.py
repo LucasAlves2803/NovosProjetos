@@ -5,7 +5,6 @@ pi = float()
 pi = 0.0
 n= int(input("Digite a quantidade de termos: "))
 for i in range(1,n+1):
-    print('{:d}'.format(i**2))
     if (i % 2 == 0):
         pi -= (1/(i**2))
     else:

@@ -1,4 +1,4 @@
-word = str(input("Digite uma palavra: "))
+palavra = str(input("Digite uma palavra: "))
 
 # print(palavra[2])somos
 
@@ -8,6 +8,6 @@ def palindromo(palavra):
             return False
     return True
 
-print("{:}".format(palindromo(word)))
+print("{:}".format(palindromo(palavra)))
 
 

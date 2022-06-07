@@ -9,17 +9,17 @@ def matriz():
             matriz[i].append(num)
     return matriz
 
-def multiplica_matriz(mat1, mat2):
-    colunas = len(mat1[0])
-    linhas = len(mat2)
+def multiplica_matriz(matriz1, matriz2):
+    col = len(matriz1[0])
+    lin = len(matriz2)
     matriz = []
     elem = int()
-    if (colunas == linhas):
-        for i in range(len(mat1)):
+    if (col == lin):
+        for i in range(len(matriz1)):
             matriz.append([])
-            for j in range(len(mat2[0])):
-                for k in range(linhas):
-                    elem += mat1[i][k] * mat2[k][j]
+            for j in range(len(matriz2[0])):
+                for k in range(lin):
+                    elem += matriz1[i][k] * matriz2[k][j]
                 matriz[i].append(elem)
                 elem = 0
 
@@ -29,22 +29,23 @@ def multiplica_matriz(mat1, mat2):
         return []
         
 
-#MAIN
+
 print("Matriz 1")
-mat1 = matriz()
+matriz1 = matriz()
 print("Matriz 2")
-mat2 =matriz()
-for i in mat1:
+matriz2 =matriz()
+print("==== Matriz 1 =====")
+for i in matriz1:
     for j in i:
         print('{:d}'.format(j),end=' ')
     print('',end='\n')
-
-for i in mat2:
+print("==== Matriz 2 =====")
+for i in matriz2:
     for j in i:
         print('{:d}'.format(j),end=' ')
     print('',end='\n')
-
-for i in multiplica_matriz(mat1,mat2):
+print("==== Resultado ====")
+for i in multiplica_matriz(matriz1,matriz2):
     for j in i:
         print('{:d}'.format(j),end=' ')
     print('',end='\n')
