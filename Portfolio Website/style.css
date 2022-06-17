@@ -10,6 +10,7 @@
   background-color: grey;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
 .navbar ul {
   display: flex;
@@ -35,4 +36,130 @@
   background-color: white;
   color: black;
   box-shadow: 10px 5px 1px black;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url("img/obito uchiha.jpeg") no-repeat center/cover;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.main__cabecalho {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px 0px;
+}
+.main__btn {
+  padding: 10px 35px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  transition: 0.6s ease;
+}
+.main__btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+  font-family: bold;
+}
+
+#sobre_mim {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+#sobre_mim .cabecalho {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  margin: 40px 0px;
+}
+#sobre_mim #pic {
+  display: flex;
+  justify-content: row;
+}
+#sobre_mim #pic img {
+  width: 575px;
+  height: 500px;
+}
+#sobre_mim #intro {
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  padding: 10px;
+}
+#sobre_mim #intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+#sobre_mim #intro p {
+  font-size: 1.5rem;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+#projects .cabecalho {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  margin: 40px 0px;
+}
+#projects .gallery {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#projects .gallery a {
+  color: white;
+  margin-bottom: 50px;
+}
+#projects .gallery a .coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#projects .gallery a .coluna img {
+  height: 460px;
+  width: 450px;
+}
+#projects .gallery a .coluna p {
+  font-size: 2rem;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
