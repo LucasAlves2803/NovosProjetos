@@ -1,7 +1,8 @@
 var cont = 0;
 var celula, celula_aux;
 var classe;
-var design;
+var design,filho1,filho2;
+var restos,quocientes;
 var objdiv ={
     Dividendo: 0,
     Dividendo_inicial:0,
@@ -90,7 +91,8 @@ function exibicao_inicial(){
         // classe = 'Valor' + objdiv.linha + '' + i;
         classe = '#Valor' + "" + objdiv.linha + "" + i;
         celula = document.querySelector(classe);
-        console.log(celula);
+        // celula.style.backgroundColor = 'greenyellow';
+        // console.log(celula);
         if (i ==0){
             celula.innerHTML = objdiv.Dividendo_inicial;      
         }else{
@@ -101,32 +103,55 @@ function exibicao_inicial(){
 }
 
 function exibe(){
-    classe = '#Valor'+ "" + objdiv.linha + "" + cont;
-    celula = document.querySelector(classe);
+
     
     if (cont <= 1){
         exibicao_inicial();
+        if (objdiv.linha > 1){
+            let num = objdiv.linha -1;
+            classe = '#Valor' + "" + num + "" + 7;
+            celula = document.querySelector(classe);
+            celula.style.backgroundColor = 'white';
+        }
+
     }
-    else if(cont == 2){
+    else{
+        let num = cont-1;
+        classe = '#Valor'+ "" + objdiv.linha + "" + num;
+        console.log(classe);
+        celula = document.querySelector(classe);
+        if (celula.style.backgroundColor == 'greenyellow'){
+            celula.style.backgroundColor = 'white';
+        }
+        classe = '#Valor'+ "" + objdiv.linha + "" + cont;
+
+        celula = document.querySelector(classe);
+        celula.style.backgroundColor = 'greenyellow';    
+        if(cont == 2){
             let log;
             if (parseInt(objdiv.Dividendo_inicial) >= parseInt(objdiv.Divisor) ){
                 log = 'sim';
                 celula.innerHTML = log;
             }else{
                 log = 'não';
-                design.removeChild(design.children[3]);
+                celula.style.color = 'white';
+                celula.style.backgroundColor = 'red';
+
+                let val = filho2.removeChild(filho2.children[3]);
+                console.log(val);
                 resto();
                 celula.innerHTML = log;
-                design.innerHTML += 'A divisão acabou!';
+                filho2.innerHTML += 'A divisão acabou!';
             }
             
     }else if (cont == 3){
             celula.innerHTML = objdiv.quociente;
             quociente();
+            novo_quociente();
 
     }else if (cont == 4){
             celula.innerHTML = objdiv.quociente + " * "+ objdiv.Divisor ;
-
+            novo_resto(objdiv.quociente * objdiv.Divisor);
     }else if (cont == 5){
             celula.innerHTML = objdiv.Dividendo_inicial  + '- ' + '(' + objdiv.Divisor + '*' + objdiv.quociente + ')';
 
@@ -147,6 +172,7 @@ function exibe(){
             // }
             objdiv.linha++;
             cont=0;
+        }
     }
     cont++;
     cont = cont % 8;
@@ -159,6 +185,19 @@ function quociente()
     celula_aux.innerHTML = objdiv.soma_q;    
 }
 
+function novo_quociente(){
+    console.log('função novo quociente');
+    // if (!objdiv.fim){
+        quocientes.innerHTML += `<p class='osquocientes'> ${objdiv.quociente} </p>`;
+    // }
+}
+
+function novo_resto(num){
+    // if (!objdiv.fim){ 
+        restos.innerHTML += `<p class='osrestos'>  -${num} <hr> ${objdiv.Dividendo_inicial - num} </p>`;
+    // }    
+}
+
 function resto(){
     celula_aux = document.querySelector("#" + cab_final[3]);
     celula_aux.innerHTML = objdiv.resto;
@@ -169,19 +208,21 @@ function resto(){
 //   }
 // }
 
-function trocar_design(design){
+function trocar_design(clone){ // essa funcão altera apenas a variável clone
     // design.children[1].innerHTML = 'espaço em obra';
     // design.children[2].innerHTML = 'espaço em obra';
-    design.removeChild(design.children[1]); // remove um filho do nó child
+    
+    console.log(clone);
+    clone.removeChild(clone.children[1]); // remove um filho do nó child
     // apaga o título divisão inteira
     // apaga os imputs  
-    design.removeChild(design.children[1]);
+    clone.removeChild(clone.children[1]);
     var grid_principal,resultado_final,tabela_aux;
     grid_principal = '<div class="grid_principal"> </div>';
     resultado_final = '<div class="resultado_final"> </div>';
     tabela_aux = '<div class="tabela_aux"> </div>';
-    design.innerHTML += grid_principal +  tabela_aux + resultado_final;
-    var grid = design.children[1];
+    clone.innerHTML += grid_principal +  tabela_aux + resultado_final;
+    var grid = clone.children[1];
     for(let j=0;j<8; j++){
         for (let i=0;  i < 8; i++){
             if (j == 0){
@@ -191,8 +232,9 @@ function trocar_design(design){
                 }
             }
     }                
-    botoes(design.children[3]);
-    tabela(design.children[2]);
+    botoes(clone.children[3]);
+    tabela(clone.children[2]);
+    console.log(clone);
 }
 
 
@@ -234,13 +276,38 @@ function iniciar_valores(){
     // apaga o design inicial
     if ((objdiv.Dividendo >= 0 && objdiv.Divisor >= 0) && (parseInt(objdiv.Dividendo) > parseInt(objdiv.Divisor))  ){
         design = document.querySelector('.main');
-        design.className = 'main2';
-        trocar_design(design); // apaga o design inicial
+        let clone = design.cloneNode(true); // cria um clone do elemento do elemento design
+        // filho2 = design.innerHTML;
+        // filho2.className = 'main2';
+        trocar_design(clone); // a tabela será construída na variável clone
+        design.innerHTML = `<div class='division'> </div>`  // os valores do design serão apagados
+        design.innerHTML += `<div class='main2'> ${clone.innerHTML} </div>`; 
+        // e dois novos valores são atrubuídos, o primeiro é a div divisão e o segundo é o novo design que
+        // foi criado na varíavel clone
+        filho1 = design.children[0];
+        // as variáveis filho1 e filho2 recebem, respectivamente, a div divisão e a div main2, que são os 
+        // filhos da div design
+        filho2 = design.children[1];
+        design.className = 'tela2';
+        // filho2.innerHTML += 'naruto';      
         exibicao_inicial();
         valores_iniciais();
+        division_design();
         cont++;
     }
 }
+
+
+function division_design(){
+    filho1.innerHTML += `<div class='restos'> </div>`;
+    filho1.innerHTML += `<div class='quocientes'> </div>`;
+    restos = filho1.children[0];
+    quocientes = filho1.children[1];
+    quocientes.innerHTML = `<p class="div"> ${objdiv.Divisor}</p>`;
+    restos.innerHTML = `<p class="osrestos"> ${objdiv.Dividendo_inicial}</p>` ;
+    
+}
+
 
 function valores_iniciais(){
     for(let i=0; i < 2; i++){

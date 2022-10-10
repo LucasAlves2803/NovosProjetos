@@ -162,4 +162,63 @@
 #projects .gallery a .coluna p {
   font-size: 2rem;
   text-decoration: none;
+}
+
+#services {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+#services .cabecalho {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px 0px;
+}
+#services .row {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#services .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 34px;
+  border: 1px solid black;
+  text-align: justify;
+  width: 350px;
+  height: 450px;
+  border-radius: 15px;
+  background: linear-gradient(to top, rgb(255, 45, 45) 50%, white 50%);
+  background-size: 100% 200%;
+  transition: all 0.8s;
+}
+#services .box img {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  padding: 10px;
+}
+#services .box:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
+  box-shadow: 0 0 20px rgb(255, 45, 45);
+}
+
+#secao {
+  height: 70vh;
+  width: 98vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#secao .cabecalho {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px 0px;
 }/*# sourceMappingURL=style.css.map */
