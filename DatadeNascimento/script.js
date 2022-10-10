@@ -264,7 +264,7 @@ function calcula(soma_a_idade){
     meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto',
                 'setembro', 'outubro', 'novembro', 'dezembro'];
     let idade = valor_final.slice(valor_final.length/2, valor_final.length);
-    if (soma_a_idade){
+    if (soma_a_idade){ // caso a pessoa não tenha feito aniversário soma uma unidade
         idade += soma_a_idade;
     }
     let mes = valor_final.slice(0,valor_final.length/2);
